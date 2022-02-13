@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id')->unsigned();
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreignId('customer_id')->constrained();
             $table->integer('solicitor_id')->nullable();
             $table->string('nombre')->nullable();
             $table->string('nif')->nullable();
